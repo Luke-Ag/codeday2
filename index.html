@@ -6,20 +6,38 @@
 		<link rel="stylesheet" type="text/css" href="/css/materialize.css">
 		<link rel="stylesheet" type="text/css" href="/css/materialize.min.css">
 		<script src="/js/materialize.min.js"></script>
-<style>
-	iframe {
-		height: 100vh;
-		width: 100vw;
-	}
-	body {
-		padding:0;
-		margin:0;
-	}
-</style>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<style>
+body {
+	padding:0;
+	margin:0;
+}
+		</style>
 	</head>
 	<body>
-		<iframe src="https://www.higherlowergame.com">
-			<p>delete systemx32</p>
-		</iframe>	
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<input id="num" placeholder="number of hours slept"></input>
+					<input type="submit"></input>
+					<h1 id="no">Not enough hours of sleep</h1><h1 id="ye">Enough hours of sleep</h1>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#ye').hide();
+			$("input[type='submit']").on('click', function() {
+				console.log('blyat');
+				if ($('#num').val() >= 1) { 
+					$('#no').hide();
+					$('#ye').show();
+
+				} else if ($('#num').val() < 1) { 
+					$('#ye').hide();
+					$('#no').show();
+				}
+			});
+		</script>
+		<p style="position:fixed;bottom:0">&#9400 Luke Silver && Beck Peters</p>
 	</body>
 </html>
